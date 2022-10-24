@@ -1,0 +1,36 @@
+.Form {
+    display: flex;
+    justify-content: center;
+}
+
+.SearchBar {
+    width: 40vw;
+border-radius: 10px 0px 0px 10px;
+    font-size: 20px;
+    padding: 1vh;
+}
+
+.SubmitButton {
+    height: 5.1vh;
+    width: 55px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: orange;
+    border-color: orange;
+
+    &:hover {
+        opacity: 0.7;
+        cursor:pointer;
+        transition: 0.2s;
+    }
+    
+}
+
+.SubmitImage {
+    height: 25px;
+    width: 22px;
+
+    // margin-top: -10px;
+    // padding-top: 10px;
+}
+
+
