@@ -2,6 +2,17 @@
     width: 90vw;
     margin: 5vw;
     margin-top: 4.5vh;
+    margin-left: 6.5vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+
+    @media only screen and (max-width:1650px) { 
+        grid-template-columns: 1fr 1fr 1fr;;
+        row-gap: 50px;
+      }
+      @media only screen and (max-width:1200px) { 
+        grid-template-columns: 1fr 1fr;
+        row-gap: 50px;
+      }
 }

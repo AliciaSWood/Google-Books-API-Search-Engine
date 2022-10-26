@@ -1,20 +1,29 @@
 .Card {
     border: 2px solid  #1A281F;
     height: 60vh;
-    width: 18vw;
+    width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin:none;
 
     &:hover {
         box-shadow: 10px 10px 20px;
         cursor: pointer;
         transition: 0.2s;
     }
+    
+    @media only screen and (max-width:840px) { 
+        height:35vh;
+        width: 200px;
+        font-size:12px;
+    }
+
 }
 .BookImage {
-    height: 50%;
-    width: 50%;
+    height: 40%;
+    width: 40%;
+
 }
