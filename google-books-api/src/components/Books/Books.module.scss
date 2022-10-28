@@ -16,8 +16,18 @@
     }
     
     @media only screen and (max-width:840px) { 
-        height:35vh;
-        width: 200px;
+        height:40vh;
+        width: 250px;
+        font-size:12px;
+    }
+    @media only screen and (max-width:600px) { 
+        height:40vh;
+        width: 40vw;
+        font-size:12px;
+    }
+    @media only screen and (max-width:500px) { 
+        height:36vh;
+        width: 40vw;
         font-size:12px;
     }
 

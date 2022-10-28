@@ -2,13 +2,41 @@ import React from 'react';
 import BookCard from '../../components/Books/BookCard';
 import styles from "./BookLibrary.module.scss"
 
-const BookLibrary = () => {
+const BookLibrary = ({bookData, setBookData}) => {
+
+console.log(bookData)
+
+
     return (
         <div className = {styles.BookCase}>
-            <BookCard image = {"https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/black-bumpy-old-book-cover-texture-3-780x1113.jpg"} title = {"Title"} author = {"Author"} description = {"Description..."}/>
-            <BookCard />
-            <BookCard />
-            <BookCard />
+            { (bookData.length) &&
+                bookData.map(book => {
+                    console.log(book)
+const bookInfo = {
+    // authors: "",
+    title: book.title,
+    description: "",
+    imageLinks: ""
+}
+if(book.authors== undefined){
+    bookInfo.authors = "No author"
+}else bookInfo.authors = book.authors[0]
+
+if(book.description && book.description.length >= 50){
+    bookInfo.description = book.description.slice(0, 50)
+} else bookInfo.description = book.description 
+
+if(book.imageLinks == undefined){
+    bookInfo.imageLinks = "BackUp Image/Missing"
+} else bookInfo.imageLinks = book.imageLinks.thumbnail
+
+                    return (<BookCard bookInfo={bookInfo}/>)
+                })
+            }
+            {/* <BookCard bookData = {bookData} setBookData = {setBookData} image = {"https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/black-bumpy-old-book-cover-texture-3-780x1113.jpg"} title = {"Title"} author = {"Author"} description = {"Description..."}/>
+            <BookCard bookData = {bookData} setBookData = {setBookData}/>
+            <BookCard bookData = {bookData} setBookData = {setBookData}/>
+            <BookCard bookData = {bookData} setBookData = {setBookData}/> */}
         </div>
     );
 };

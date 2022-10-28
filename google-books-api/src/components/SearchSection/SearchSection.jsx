@@ -2,12 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react'
 import styles from "./SearchSection.module.scss"
 import searchicon from './searchicon.png'
+import tidyBookInfo from '../../data/GoogleBooksData';
 
 
 
-const SearchSection = ({theData, setData}) => {
+const SearchSection = ({bookData, setBookData}) => {
   // Takes the search input, and how the user sets it by changing the value inside it
     const [searchInput, setSearchInput] = useState("");
+    const [query, setquery] = useState("")
 
          // Event handling for typing in search bar
     const handleChange = (event) => {
@@ -16,54 +18,45 @@ const SearchSection = ({theData, setData}) => {
 
     }
 
-    // useState to change once useEffect fetches our Google Books data
-
-
 const onSubmitHandler = (event) => {
   // Prevent browser refreshing after form submission
   event.preventDefault()
+  setquery(searchInput)
   //fetchBooks()
   // Call fetch books async function
 
 }
+
 
 // UseEffect which fetches our data, and returns an Object
 useEffect(() => {
   const url = `https://www.googleapis.com/books/v1/volumes?q=search+terms=${searchInput}`
   
   const fetchData = async () => {
+    // if search term = nothing, return
     try {
       const response = await fetch(url);
       const json = await response.json();
       //console.log(json);
-      setData(json)
-      console.log(theData)
+      const volumeInfo = json.items.map(book => 
+        {
+           return book.volumeInfo
+        // is a function that runs on every item
+        })
+      setBookData(volumeInfo)
+      
+      // console.log(bookData.items)
+      // console.log(bookData.items[0])
+      // console.log(bookData.items[0].volumeInfo)
+      // console.log(bookData.items[0].volumeInfo.title)
   } catch (error) {
       console.log("Error in async", error);
   }
   }
   fetchData()
   
-  },[searchInput])
-
-
-// const fetchBooks = async () => {
-//   const url = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
-
-// const fetchData = async () => {
-//   try {
-//     const response = await fetch(url);
-//     const json = await response.json();
-//     // console.log(json)
-// } catch (error) {
-//     console.log("Error in async", error);
-// }
-// }
-// fetchData()
-// }
-// data([0].volumeinfo.title, .volumeinfo.authors, volumeinfo.description, volumeinfo.)
-
-
+  },[query])
+  
 
 
       
@@ -91,4 +84,21 @@ export default SearchSection;
 </button> </div> */}
 
 
+
+
+// const fetchBooks = async () => {
+//   const url = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
+
+// const fetchData = async () => {
+//   try {
+//     const response = await fetch(url);
+//     const json = await response.json();
+//     // console.log(json)
+// } catch (error) {
+//     console.log("Error in async", error);
+// }
+// }
+// fetchData()
+// }
+// data([0].volumeinfo.title, .volumeinfo.authors, volumeinfo.description, volumeinfo.)
 
