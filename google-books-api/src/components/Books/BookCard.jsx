@@ -11,7 +11,7 @@ const BookCard = (props, bookData, setBookData) => {
             <img className = {styles.BookImage} src = {props.bookInfo.imageLinks}/>
             <h2>{props.bookInfo.title}</h2>
             <h3>{props.bookInfo.authors}</h3>
-            <p>{props.bookInfo.description}</p>
+            <p className = {styles.Desc}>{props.bookInfo.description}</p>
         </div>
     );
 };

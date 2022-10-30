@@ -6,10 +6,10 @@ import tidyBookInfo from '../../data/GoogleBooksData';
 
 
 
-const SearchSection = ({bookData, setBookData}) => {
+const SearchSection = ({bookData, setBookData, query, setquery}) => {
   // Takes the search input, and how the user sets it by changing the value inside it
-    const [searchInput, setSearchInput] = useState("");
-    const [query, setquery] = useState("")
+  const [searchInput, setSearchInput] = useState("")
+    
 
          // Event handling for typing in search bar
     const handleChange = (event) => {

@@ -2,7 +2,8 @@ import React from 'react';
 import BookCard from '../../components/Books/BookCard';
 import styles from "./BookLibrary.module.scss"
 
-const BookLibrary = ({bookData, setBookData}) => {
+const test = false
+const BookLibrary = ({bookData, query}) => {
 
 console.log(bookData)
 
@@ -44,7 +45,7 @@ if(book.imageLinks == undefined){
     bookInfo.imageLinks = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
 } else bookInfo.imageLinks = book.imageLinks.thumbnail
 
-                    return (<BookCard bookInfo={bookInfo}/>)
+                    return (query && <BookCard bookInfo={bookInfo}/>)
                 })
             }
             {/* <BookCard bookData = {bookData} setBookData = {setBookData} image = {"https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/black-bumpy-old-book-cover-texture-3-780x1113.jpg"} title = {"Title"} author = {"Author"} description = {"Description..."}/>

@@ -32,10 +32,32 @@
         width: 40vw;
         font-size:12px;
     }
+    @media only screen and (max-width:450px) { 
+        height: 32vh ;
+        width: 30vw;
+        font-size: 10px;
+        margin-bottom: 0;
+      }
+      @media only screen and (max-width:450px) { 
+        height: 32vh ;
+        width: 30vw;
+        font-size: 10px;
+        margin-bottom: 0;
+      }
+      @media only screen and (max-width:375px) { 
+        font-size: 8px;
+        padding-top: 4vh;
+        height: 29vh;
+      }
 
 }
 .BookImage {
     height: 40%;
     width: 40%;
 
+}
+.Desc {
+    @media only screen and (max-width:375px) { 
+        visibility: hidden;
+      } 
 }
