@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react'
 import styles from "./SearchSection.module.scss"
 import searchicon from './searchicon.png'
-import tidyBookInfo from '../../data/GoogleBooksData';
+
 
 
 
@@ -55,11 +55,7 @@ useEffect(() => {
   }
   fetchData()
   
-  },[query])
-  
-
-
-      
+  },[query])      
 
     return (
 <div>
@@ -75,30 +71,4 @@ useEffect(() => {
 
 export default SearchSection;
 
-
-
-{/* <div className={styles.search}>
-<input type="text" className={styles.searchTerm} placeholder="Enter book title, author, genre, etc..."></input>
-<button type="submit" className={styles.searchButton}>
-  <img src = {searchicon}/>
-</button> </div> */}
-
-
-
-
-// const fetchBooks = async () => {
-//   const url = `https://www.googleapis.com/books/v1/volumes?q=${searchInput}`
-
-// const fetchData = async () => {
-//   try {
-//     const response = await fetch(url);
-//     const json = await response.json();
-//     // console.log(json)
-// } catch (error) {
-//     console.log("Error in async", error);
-// }
-// }
-// fetchData()
-// }
-// data([0].volumeinfo.title, .volumeinfo.authors, volumeinfo.description, volumeinfo.)
 

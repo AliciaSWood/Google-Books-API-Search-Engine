@@ -2,7 +2,7 @@ import React from 'react';
 import BookCard from '../../components/Books/BookCard';
 import styles from "./BookLibrary.module.scss"
 
-const test = false
+
 const BookLibrary = ({bookData, query}) => {
 
 console.log(bookData)
@@ -48,10 +48,7 @@ if(book.imageLinks == undefined){
                     return (query && <BookCard bookInfo={bookInfo}/>)
                 })
             }
-            {/* <BookCard bookData = {bookData} setBookData = {setBookData} image = {"https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/black-bumpy-old-book-cover-texture-3-780x1113.jpg"} title = {"Title"} author = {"Author"} description = {"Description..."}/>
-            <BookCard bookData = {bookData} setBookData = {setBookData}/>
-            <BookCard bookData = {bookData} setBookData = {setBookData}/>
-            <BookCard bookData = {bookData} setBookData = {setBookData}/> */}
+            
         </div>
     );
 };

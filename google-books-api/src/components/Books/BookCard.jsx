@@ -3,7 +3,7 @@ import styles from "./Books.module.scss"
 import book from "./bookeg.png"
 
 
-const BookCard = (props, bookData, setBookData) => {
+const BookCard = (props) => {
 
 
     return (
@@ -18,23 +18,4 @@ const BookCard = (props, bookData, setBookData) => {
 
 export default BookCard;
 
-// bookData.items.volumeInfo.title
-
-// const tidyBookInfo = (itemEntry) => {
-//   const { id, volumeInfo, selfLink } = itemEntry;
-//   const { title, authors, imageLinks } = volumeInfo;
-
-//   return {
-//     id,
-//     selfLink,
-//     title,
-//     authors: authors.join(', '),
-//     img: imageLinks.thumbnail,
-//   };
-// };
-
-// const getBookData = async (bookData) => {
-//   const bookInfo = bookData.items.map(tidyBookInfo());
-//   return bookInfo;
-// };
 
