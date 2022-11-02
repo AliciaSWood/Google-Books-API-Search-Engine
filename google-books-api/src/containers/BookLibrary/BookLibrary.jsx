@@ -33,8 +33,8 @@ if(book.authors== undefined){
       }
 else bookInfo.authors = book.authors[0]
 
-if(book.description && book.description.length >= 50){
-    bookInfo.description = book.description.slice(0, 50) + "..."
+if(book.description && book.description.length >= 100){
+    bookInfo.description = book.description.slice(0, 100) + "..."
 } else bookInfo.description = book.description 
 
 if(book.title && book.title.length >=50){

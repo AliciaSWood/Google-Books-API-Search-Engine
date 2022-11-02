@@ -38,6 +38,9 @@ useEffect(() => {
       const response = await fetch(url);
       const json = await response.json();
       //console.log(json);
+      if (json.totalItems === 0) {
+        return alert("No book results found");
+    }
       const volumeInfo = json.items.map(book => 
         {
            return book.volumeInfo
