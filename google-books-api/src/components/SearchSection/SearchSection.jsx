@@ -32,7 +32,7 @@ const onSubmitHandler = (event) => {
 useEffect(() => {
   const url = `https://www.googleapis.com/books/v1/volumes?q=search+terms=${searchInput}`
   
-  const fetchData = async () => {
+   const fetchData = async () => {
     // if search term = nothing, return
     try {
       const response = await fetch(url);
@@ -53,7 +53,7 @@ useEffect(() => {
       console.log("Error in async", error);
   }
   }
-  fetchData()
+  query && fetchData()
   
   },[query])      
 
